@@ -200,6 +200,8 @@ class _MapScreenState extends State<MapScreen> {
           heightFactor: 10,
           widthFactor: 2.5,
           child: GoogleMap(
+            myLocationEnabled: true,
+            myLocationButtonEnabled: true,
             zoomGesturesEnabled: true,
             initialCameraPosition: const CameraPosition(
               //innital position in map

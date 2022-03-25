@@ -12,6 +12,7 @@ class carinf extends StatefulWidget {
 }
 
 class _carinfState extends State<carinf> {
+  int index1 = 0;
   int activeState = 0;
   final urlImages = [
     'https://i.ibb.co/wd6WNzN/Carslid1.jpg',
@@ -41,18 +42,18 @@ class _carinfState extends State<carinf> {
                     height: 500,
                     enlargeStrategy: CenterPageEnlargeStrategy.height,
                     enableInfiniteScroll: false,
-                    onPageChanged: (index, reason) =>
-                        setState(() => activeState = index)),
+                    onPageChanged: (index, reason) {
+                      index1 = index;
+                      setState(() => activeState = index);
+                    }),
                 itemCount: urlImages.length,
                 itemBuilder: (context, index, realindex) {
                   final urlImage = urlImages[index];
                   return buildImage(urlImage, index);
                 },
               ),
-              const SizedBox(height: 10),
-              buildIndicator(),
-              const SizedBox(height: 10),
-              _bottonLogin(),
+              if (index1 < 2) buildIndicator(),
+              if (index1 == 2) _bottonLogin(),
             ],
           ),
         ),
@@ -78,7 +79,7 @@ class _carinfState extends State<carinf> {
             padding:
                 const EdgeInsets.symmetric(horizontal: 85.0, vertical: 14.0),
             child: const Text(
-              'Iniciar Sesión',
+              '¡Vamos!',
               style: TextStyle(
                 fontSize: 10.0,
                 fontWeight: FontWeight.bold,

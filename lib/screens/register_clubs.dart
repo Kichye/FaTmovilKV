@@ -19,22 +19,26 @@ class _clubReg extends State<clubReg> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(22))),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(5))),
         /* automaticallyImplyLeading: false, */
-        title: const Text('Registrar'),
+        title: const Text(''),
         centerTitle: true,
         titleTextStyle: const TextStyle(
             fontSize: 20,
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: Color.fromARGB(255, 66, 226, 186),
             fontWeight: FontWeight.bold,
-            fontFamily: 'SFPRODISPLAY'),
+            fontFamily: 'SFPRODISPLAY1'),
       ),
-      body: Center(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Text('Nuevo CLUB',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 25, fontFamily: 'SFPRODISPLAY2')),
               const SizedBox(
                 height: 10,
               ),
@@ -139,6 +143,9 @@ class _clubReg extends State<clubReg> {
             ),
             cursorColor: CupertinoColors.inactiveGray,
           ),
+          const SizedBox(
+            height: 10,
+          ),
           CupertinoTextField(
             padding: const EdgeInsets.all(16),
             placeholder: 'Telefono',
@@ -154,6 +161,9 @@ class _clubReg extends State<clubReg> {
             ),
             cursorColor: CupertinoColors.inactiveGray,
           ),
+          const SizedBox(
+            height: 10,
+          ),
           CupertinoTextField(
             padding: const EdgeInsets.all(16),
             placeholder: 'Geoubicación',
@@ -168,6 +178,9 @@ class _clubReg extends State<clubReg> {
               borderRadius: BorderRadius.circular(10),
             ),
             cursorColor: CupertinoColors.inactiveGray,
+          ),
+          const SizedBox(
+            height: 10,
           ),
           CupertinoTextField(
             padding: const EdgeInsets.all(16),

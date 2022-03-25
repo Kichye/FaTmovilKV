@@ -24,7 +24,7 @@ class fabwidget extends StatelessWidget {
 class fabwidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) => OpenContainer(
-        transitionDuration: const Duration(milliseconds: 700),
+        transitionDuration: const Duration(milliseconds: 100),
         openBuilder: (context, _) => const RegisterServ(),
         closedShape: CircleBorder(),
         closedBuilder: (context, openContainer) => Container(
